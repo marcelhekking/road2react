@@ -14,6 +14,9 @@ const PARAM_HPP = "hitsPerPage=";
 
 const Loading = () => <div>Loading ...</div>;
 
+const withLoading = Component => ({ isLoading, ...rest }) =>
+  isLoading ? <Loading /> : <Component {...rest} />;
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -131,15 +134,12 @@ class App extends Component {
           <Table list={list} onDismiss={this.onDismiss} />
         )}
         <div className="interactions">
-          {isLoading ? (
-            <Loading />
-          ) : (
-            <Button
-              onClick={() => this.fetchSearchTopStories(searchKey, page + 1)}
-            >
-              More
-            </Button>
-          )}
+          <ButtonWithLoading
+            isLoading={isLoading}
+            onClick={() => this.fetchSearchTopStories(searchKey, page + 1)}
+          >
+            More
+          </ButtonWithLoading>
         </div>
       </div>
     );
@@ -210,6 +210,8 @@ const Button = ({ onClick, className = "", children }) => (
     {children}
   </button>
 );
+
+const ButtonWithLoading = withLoading(Button);
 
 Button.defaultProps = {
   className: ""
