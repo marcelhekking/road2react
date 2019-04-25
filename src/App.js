@@ -191,8 +191,15 @@ const Button = ({ onClick, className = "", children }) => (
 );
 
 Button.defaultProps = {
-  className: ""
+  className: '',
 };
+
+Button.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  className: PropTypes.string,
+  children: PropTypes.node.isRequired,
+};
+
 
 Table.propTypes = {
   list: PropTypes.arrayOf(
