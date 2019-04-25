@@ -194,6 +194,12 @@ Button.defaultProps = {
   className: ""
 };
 
+Button.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  className: PropTypes.string,
+  children: PropTypes.node.isRequired
+};
+
 Table.propTypes = {
   list: PropTypes.arrayOf(
     PropTypes.shape({
