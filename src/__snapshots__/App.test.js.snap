@@ -107,7 +107,13 @@ exports[`Table has a valid snapshot 1`] = `
     >
       2
     </span>
-    <span>
+    <span
+      style={
+        Object {
+          "width": "10%",
+        }
+      }
+    >
       <button
         className="button-inline"
         onClick={[Function]}
@@ -158,7 +164,13 @@ exports[`Table has a valid snapshot 1`] = `
     >
       2
     </span>
-    <span>
+    <span
+      style={
+        Object {
+          "width": "10%",
+        }
+      }
+    >
       <button
         className="button-inline"
         onClick={[Function]}
